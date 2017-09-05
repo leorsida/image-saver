@@ -34,7 +34,7 @@ angular.module('image-saver', [])
 
     .factory('FileService', function ($q, $cordovaFile, $cordovaFileTransfer) {
            var StorageDirectory = cordova.file.cacheDirectory;
-           function DownloadFileAsync(url,StorageDirectory,directory,options,AllowAllHost){
+           function DownloadFileAsync(url,StorageDirectory,directory,file,options,AllowAllHost){
                var q = $q.defer();
                $cordovaFileTransfer.download(url,StorageDirectory+directory+'/'+file,options,AllowAllHost).then(function () {
                    var path = StorageDirectory+directory+'/'+file;
